@@ -1,0 +1,16 @@
+language: node_js
+node_js:
+- 8.1.2
+branches:
+  only:
+  - develop
+  - master
+before_script: 
+script:
+- npm run build.prod
+after_success: 
+deploy:
+  provider: heroku
+  api_key:
+    secure: A2IOSJ1fbir0FZfxwrW+zNk4999fBu1ti4V5NJwta14LHl3iiSbEGVJTO6HOsIF25YwlFa7aELPAVQAqQ6Y80phTKtb73GJXZoQ7mYmG6PNDP8eGkDvcFq8GCDLx6gG5XQMklnp9oyCeK8onD/zwyjTjGE7fI6r3XwYtLAMxLOjkj9UI67oGP2xNP7/XU+mhgaYaGXAWKBd1xNVdeXChukm+7XVQuB5zCrnrlYEDbLuT/RufdcWlHXsgVfPjAdZ7LJDVhsb0aXB60YwZTGKBflQiODxXDQ+erlxhSRZ3QRX9fvtn+LzDG1ST91j5B8K5j0T7uuiFrsnrffGFIv4y2Ku/80mRPyCPPVzRAYQp4y0opIg7PDVvr29ZXDyngep2De5WCJ+wB7qR2EG3WHYPTVoTeIW0d90ca9XAtNb8G1H4OjEsW8EqiQXFA+vPgnqtKksLav8wMdtiuYkz/D5YqyVcouqMxUq8vLGUqoZyXLL6gJrAUW1uiP0CIip+wo97vTOpr8tApUil0Wd8zJu3vgBgxpZwZ2JQ8IFwzIUc+VYlaWueUrRwIHVL3AIlFqYB9Ny9GBvztX9rZc+rW2mdRpjnR2PY+oaTKHf+pyJ57v6c/CijfFjhp9ZZ1jfYcqTTQxWW9m/8qHqR2Tb+60vxPaGzkSlcf/iL38XRV2BEr9s=
+  app: bj-travis-ci-app
